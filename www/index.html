@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page Title</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/animate.css" />
+    
+	<link rel="stylesheet" href="css/themes/default/jquery.mobile-1.4.5.min.css" />
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery.mobile-1.4.5.min.js"></script>
+    
+    <style>
+        #wrapper {
+            width: 90%;
+            margin: 0 auto;
+        }
+        
+        #fail {
+            color: red;
+        }
+        
+        #success {
+            color: green;
+        }
+        
+        h2 {
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+        }
+    
+        p {
+            text-align: center;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        .visible {
+            display: block;
+        }
+        
+    </style>
+    
+    <script>
+        $(document).ready(function(e){
+           $('#thumb').bind('touchstart', function(e){
+               e.preventDefault();
+            
+               $('#success').fadeOut('slow');
+               $('#fail').fadeOut('slow');
+               
+               decide();
+               
+           }); 
+            
+            function decide(){
+                $('#thumb').removeClass('animated flash shake');
+                
+                var d = Math.round(Math.random());
+                if ( d == 0 ) {
+                    $('#fail').fadeIn('slow');
+                    $('#thumb').addClass('animated shake');
+                    navigator.vibrate([100,100,100,100,100,100]);
+                }
+                else {
+                    $('#success').fadeIn('slow');
+                    $('#thumb').addClass('animated flash');
+                    navigator.vibrate(250);
+                }
+                setTimeout(hide(),3000);
+            }
+            
+            function hide(){
+                $('#success').fadeOut('slow');
+                $('#fail').fadeOut('slow');
+            }
+        });    
+    </script>
+    
+</head>
+<body>
+
+<div data-role="page">
+
+	<div data-role="header">
+		<h1>Scan App</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+        
+    <div id="wrapper">
+        <h2>Place your thumb to Scan</h2>
+        <p><img src="images/thumbprint.png" id="thumb"></p>
+        
+        <div id="scanning" class="ui-body ui-body-a ui-corner-all hidden">
+            <p>/// Scanning your biological data. Please wait. ///</p>
+        </div>
+        
+        <div id="success" class="ui-body ui-body-a ui-corner-all hidden">
+            <p>Congratulations!</p>
+        </div>
+        
+        <div id="fail" class="ui-body ui-body-a ui-corner-all hidden">
+            <p>Authentication Fail!</p>
+        </div>
+    </div>
+        
+	</div><!-- /content -->
+
+	<div data-role="footer" data-position="fixed">
+		<h4>developed by &copy; Danusio Jr</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+</body>
+</html>

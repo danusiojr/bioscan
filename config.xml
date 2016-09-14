@@ -1,0 +1,39 @@
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.scannerdigital" version="2.0">
+  <name>BioScan</name>
+  <description>Scan your fingers just for fun!</description>
+  <author href="Danusio Developer" email="danusiodeveloper@gmail.com">Danusio Developer</author>
+  <content src="index.html"/>
+  <preference name="DisallowOverscroll" value="true"/>
+  <preference name="android-minSdkVersion" value="14"/>
+  <plugin name="cordova-plugin-vibration" source="npm" spec="~2.1.0"/>
+  <icon src="icon.png"/>
+  <platform name="android">
+    <icon src="res/icon/android/mipmap-mdpi/ic_launcher.png" density="mdpi"/>
+    <icon src="res/icon/android/mipmap-hdpi/ic_launcher.png" density="hdpi"/>
+    <icon src="res/icon/android/mipmap-xhdpi/ic_launcher.png" density="xhdpi"/>
+    <icon src="res/icon/android/mipmap-xxhdpi/ic_launcher.png" density="xxhdpi"/>
+    <icon src="res/icon/android/mipmap-xxxhdpi/ic_launcher.png" density="xxxhdpi"/>
+    <splash src="www/res/screen/android/drawable-land-ldpi-screen.png" density="land-ldpi"/>
+    <splash src="www/res/screen/android/drawable-land-mdpi-screen.png" density="land-mdpi"/>
+    <splash src="www/res/screen/android/drawable-land-hdpi-screen.png" density="land-hdpi"/>
+    <splash src="www/res/screen/android/drawable-land-xhdpi-screen.png" density="land-xhdpi"/>
+    <splash src="www/res/screen/android/drawable-land-xxhdpi-screen.png" density="land-xxhdpi"/>
+    <splash src="www/res/screen/android/drawable-land-xxxhdpi-screen.png" density="land-xxxhdpi"/>
+    <splash src="www/res/screen/android/drawable-port-ldpi-screen.png" density="port-ldpi"/>
+    <splash src="www/res/screen/android/drawable-port-mdpi-screen.png" density="port-mdpi"/>
+    <splash src="www/res/screen/android/drawable-port-hdpi-screen.png" density="port-hdpi"/>
+    <splash src="www/res/screen/android/drawable-port-xhdpi-screen.png" density="port-xhdpi"/>
+    <splash src="www/res/screen/android/drawable-port-xxhdpi-screen.png" density="port-xxhdpi"/>
+    <splash src="www/res/screen/android/drawable-port-xxxhdpi-screen.png" density="port-xxxhdpi"/>
+  </platform>
+  <access origin="*"/>
+  <allow-intent href="http://*/*"/>
+  <allow-intent href="https://*/*"/>
+  <allow-intent href="tel:*"/>
+  <allow-intent href="sms:*"/>
+  <allow-intent href="mailto:*"/>
+  <allow-intent href="geo:*"/>
+  <platform name="android">
+    <allow-intent href="market:*"/>
+  </platform>
+</widget>
